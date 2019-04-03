@@ -1,0 +1,147 @@
+/*!
+ * Stylesheet me.
+ *
+ * This stylesheet is for the design course and kmom04 where we use LESS.
+ */
+
+/*
+ * Import mixins
+ */
+
+
+@import "normalize.css/normalize.less";
+
+/**
+ * Font Awesome.
+ */
+
+@import "@fortawesome/fontawesome-free/less/fontawesome.less";
+@import "@fortawesome/fontawesome-free/less/solid.less";
+@import "@fortawesome/fontawesome-free/less/brands.less";
+
+
+
+/**
+ * A responsive menu.
+ */
+
+@import "@desinax/responsive-menu/less/responsive-menu.less";
+//@import "@desinax/responsive-menu/less/media-queries.less";
+
+/**
+ * Base style to affect HTML elements on a general scale.
+ */
+
+@import "base/base-kmom04.less";
+
+
+//@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
+
+/**
+ * Import the typographic grid.
+ */
+@import "@desinax/typographic-grid/less/typography-font-families.less";
+@import "@desinax/typographic-grid/less/typography-defaults.less";
+
+
+/**
+ * Import the vertical grid.
+ */
+@import "@desinax/vertical-grid/less/grid.less";
+
+
+//Show the grid
+.hgrid .inner-wrap {
+    @gridImage: "../img/magic-number-@{magicNumber}.png";
+    #desinax-hgrid.showGrid(@gridImage);
+}
+
+
+
+// Default grid, change to fit your requirements.
+@columnWidth:   30;
+@gutterWidth:   10;
+@columns:       24;
+@gridType:      "float"; // "flex"
+
+
+/**
+ * Layout style for general structure of header, navbar, main, footer
+ * and other regions of the page including route specific styles.
+ */
+
+@import "layout/regions.less";     // To add style for ?regions
+
+
+/**
+ * My own settings, not currently in their own module.
+ */
+
+// adapt the typo grid to y styles
+
+@fontFamilyCode: @fontFamilyCourier;
+
+
+// Magic number and base fontsize
+@magicNumber:  24px;  // 22px
+@fontSizeBody: 14px;
+
+@import "/@desinax/figure/less/figure.less";
+
+// Enable style from the module and optinally add customized layout
+figure.figure {
+    #desinax-figure.figure();
+}
+
+// Enable style from the module and optinally add customized layout
+figure.figure {
+    @maxContentWidth: 700px;
+    #desinax-figure.figure(@maxContentWidth);
+}
+
+//@maxContentWidth: 50px;
+
+@import "layout/layout-kmom05.less";
+@import "modules/header-kmom05.less";
+@import "modules/flash-kmom05.less";
+@import "modules/breadcrumb-kmom05.less";
+@import "modules/byline-minimalistic.less";
+@import "modules/footer-minimalistic.less";
+@import "responsive/responsive-kmom05.less";
+
+@import url('https://fonts.googleapis.com/css?family=Tangerine:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300');
+
+@fontFamilyBody: 'Lato', sans-serif;
+@fontFamilyHeadings: 'Tangerine', sans-serif;
+@fontNavbar: 'Tangerine', sans-serif;
+@fontFamilyLogo: 'Tangerine';
+
+@bgColor: #f5f5f5;
+@textColor: #4d4d4d; // #c9cdd2;
+@bgExtraDark: #16263F; //#1f2c41;
+@thinBorderGrey: 0.1px solid @bgColor;
+@siteLogoTextColor: #4d4d4d;
+@navbarTextColor: #404040;
+@footerTextColor: #4d4d4d;
+@headerBgColor: #f5f5f5;
+@mainBgColor: @bgColor;
+@footerBgColor: @bgColor;
+@complementaryColor: #996e17;
+@hoverTextColor: #c63952;
+@bgColorHtml: #f5f5f5;
+
+
+.blog-post .figure {
+  margin-bottom: 24px;
+  img {
+      border-radius: 20px;
+      border-style: double;
+  }
+}
+.blog-post .figure.left {
+  margin-right: 1em;
+}
+.blog-post .figure.right {
+  margin-left: 1em;
+}

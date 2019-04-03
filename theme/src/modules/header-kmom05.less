@@ -1,0 +1,90 @@
+
+.inner-wrap-header {
+    background-color: @headerBgColor;
+}
+
+.inner-wrap-header {
+    #desinax-vgrid.grid(100%);
+}
+
+.region-header {
+    height: 25px;
+}
+
+.region-header-col-1 {
+    #desinax-vgrid.column(@columns);
+    text-align: left;
+    height: 2px;
+}
+
+.region-header-col-2 {
+    #desinax-vgrid.column(@columns);
+    height: 40px;
+    .my-navbar {
+        text-align: center;
+        font-size: 1.4em;
+        margin-top: 3px;
+        padding-right: 1%;
+        box-sizing: border-box;
+        color: @navbarTextColor;
+        li {
+            padding-left: 1%;
+            font-family: @fontNavbar;
+        }
+    }
+}
+
+.region-header-col-3 {
+    #desinax-vgrid.column(@columns);
+    height: 40px;
+}
+
+.site-logo {
+    display: none;
+    &-text {
+        display: none;
+        font-family: @fontFamilyLogo;
+        font-size: 3.5em;
+        a {
+            color: @siteLogoTextColor;
+            letter-spacing: 1px;
+            transition: all .1s ease-in;
+            }
+        a:hover {
+            letter-spacing: 0.1em;
+            }
+        }
+
+    &-text-icon {
+        display: none;
+    }
+}
+
+/* ----------------------------------------------------------------------------- NAVBAR --------------- */
+
+.rm-navbar ul {
+    margin: 0;
+}
+
+.rm-desktop li a {
+    text-align: left;
+}
+
+.rm-default ul li {
+    font-weight: bold;
+}
+
+.rm-default a {
+    padding: 0;
+}
+
+
+.rm-desktop li a:hover {
+    color: @hoverTextColor;
+    text-decoration: none;
+    background-color: inherit;
+}
+
+.rm-small-wrapper {
+    color: @navbarTextColor;
+}

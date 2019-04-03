@@ -1,0 +1,209 @@
+/**
+ * Layout for responsive style through media queries.
+ */
+
+@media screen and (max-width: 950px) {
+    .region-header-col-2 {
+        display: none;
+    }
+
+    .region-header-col-1 {
+        #desinax-vgrid.column(21);
+        #desinax-vgrid.push(1);
+    }
+
+    .outer-wrap-flash {
+        margin-bottom: @magicNumber;
+    }
+
+    .region-main {
+        #desinax-vgrid.column(@columns - 2);
+        #desinax-vgrid.push(1);
+        margin-bottom: @magicNumber;
+        img {
+            //height: 12em;
+        }
+
+        &.has-sidebar-right {
+            #desinax-vgrid.column(15);
+            #desinax-vgrid.push(1);
+            img {
+                //height: 16em;
+            }
+        }
+
+        &.has-sidebar-left {
+            #desinax-vgrid.column(15);
+            #desinax-vgrid.push(1);
+            img {
+                height: 6em;
+            }
+        }
+
+        &.has-sidebar-left.has-sidebar-right {
+            #desinax-vgrid.column(13);
+            #desinax-vgrid.push(1);
+        }
+    }
+
+    .region-sidebar-right {
+        #desinax-vgrid.column(5);
+        #desinax-vgrid.push(1);
+    }
+
+    .author.byline {
+        width: 100%;
+        margin: 0;
+        img {
+            height: 4.1em;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .region-main.has-sidebar-left.has-sidebar-right {
+        #desinax-vgrid.column(17);
+        #desinax-vgrid.push(1);
+    }
+
+    .region-main.has-sidebar-right {
+        #desinax-vgrid.column(@columns - 2);
+        #desinax-vgrid.push(1);
+    }
+
+    .region-sidebar-left.has-sidebar-right {
+        #desinax-vgrid.column(4);
+        #desinax-vgrid.push(1);
+    }
+
+    .region-sidebar-right.has-sidebar-left {
+        #desinax-vgrid.column(@columns - 2);
+        #desinax-vgrid.push(1);
+    }
+
+    .region-sidebar-right {
+        #desinax-vgrid.column(@columns - 2);
+        #desinax-vgrid.push(1);
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .region-main {
+        #desinax-vgrid.column(@columns - 2);
+        #desinax-vgrid.push(1);
+        img {
+            //height: 9.4em;
+        }
+
+        &.has-sidebar-left {
+            #desinax-vgrid.column(@columns - 2);
+            #desinax-vgrid.push(1);
+            img {
+                height: 6em;
+            }
+        }
+    }
+
+    .region-sidebar-left {
+        #desinax-vgrid.column(@columns - 2);
+        #desinax-vgrid.push(1);
+    }
+
+    .author.byline {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .region-main.has-sidebar-left.has-sidebar-right {
+        #desinax-vgrid.column(@columns - 2);
+        #desinax-vgrid.push(1);
+    }
+
+    .region-sidebar-left.has-sidebar-right {
+        #desinax-vgrid.column(@columns - 2);
+        #desinax-vgrid.push(1);
+    }
+
+    .region-sidebar-right.has-sidebar-left {
+        #desinax-vgrid.column(@columns - 2);
+        #desinax-vgrid.push(1);
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .region-main {
+        #desinax-vgrid.column(@columns - 2);
+        #desinax-vgrid.push(1);
+        img {
+            //height: 6.7em;
+        }
+
+        &.has-sidebar-right {
+            #desinax-vgrid.column(@columns - 2);
+            #desinax-vgrid.push(1);
+            img {
+                //height: 9.3em;
+            }
+        }
+    }
+
+    .region-sidebar-right {
+        #desinax-vgrid.column(@columns - 2);
+        #desinax-vgrid.push(1);
+    }
+
+    .author.byline {
+        width: 100%;
+        margin: 0;
+        img {
+            height: 4.1em;
+        }
+    }
+
+    .footer-column {
+        #desinax-vgrid.column(@columns);
+        box-sizing: border-box;
+        text-align: center;
+        margin-bottom: @magicNumber;
+
+        &-1 {
+            #desinax-vgrid.push(1);
+        }
+        &-2 {
+            #desinax-vgrid.push(1);
+        }
+        &-3 {
+            #desinax-vgrid.push(1);
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .region-main {
+        #desinax-vgrid.column(@columns - 2);
+        #desinax-vgrid.push(1);
+        .figure.right {
+            //display: none;
+        }
+    }
+
+    .region-main.has-sidebar-left.has-sidebar-right {
+        #desinax-vgrid.column(@columns - 2);
+        #desinax-vgrid.push(1);
+        img {
+            //height: 8em;
+        }
+    }
+
+    .author.byline {
+        width: 100%;
+        margin: 0;
+        img {
+            height: 4.1em;
+        }
+    }
+}

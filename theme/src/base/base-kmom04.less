@@ -1,0 +1,74 @@
+/**
+ * Base style to affect HTML elements on a general scale.
+ */
+@bgColorHtml: snow;
+@bgColor: snow;
+@textColor: #274068;
+//@fontFamilyBody: "Muli", sans-serif;
+@thinBorderGrey: 0.1px solid #eeecec;
+@footerBgColor: #334665;
+
+//@import url('https://fonts.googleapis.com/css?family=Muli');
+
+
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: @bgColorHtml;
+    font-size: 100%;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    color: @textColor;
+    background-color: @bgColor;
+    max-width: 100%;
+    //font: 100.01%/1 @fontFamilyBody;
+    #desinax-hgrid.font(@fontSizeBody);
+}
+
+
+// Activate grid and affect all typographic elements
+#desinax-hgrid.activateDefaultTypography();
+
+
+.wrap-all {
+    background-color: @bgColor;
+}
+
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: @textColor;
+}
+
+p,
+li {
+    //font-size: 1.2em;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    border: none;
+    //font-size: 1.3em;
+}
+
+img{
+    max-width: 100%;
+}

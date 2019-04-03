@@ -1,0 +1,286 @@
+
+.row {
+    #desinax-vgrid.row();
+    margin-bottom: 12px;
+}
+
+.region-header,
+.region-flash,
+.region-footer,
+.inner-wrap-header .row,
+.inner-wrap-flash .row {
+    margin: 0;
+    width: 100%;
+}
+
+.outer-wrap-main {
+    #desinax-vgrid.grid(1000px);
+}
+
+.inner-wrap {
+    #desinax-vgrid.grid(1000px);
+}
+
+
+.vgrid .inner-wrap {
+    @gridImage: "../img/grid_24x30x10-nomargin.png";
+    //@gridImage: "../../img/grid_12x60x20-nomargin.png";
+    #desinax-vgrid.showGrid(@gridImage, 1000px);
+
+    &.inner-wrap-header,
+    &.inner-wrap-footer {
+        #desinax-vgrid.showGrid(@gridImage);
+    }
+}
+
+
+/* ----------------------------------------------------------------------------- MAIN ----------------*/
+
+.wrap-all {
+    background-color: #f5f5f5;
+    background-repeat: repeat-y;
+    background-position: top;
+    @media screen and (max-width: 2500px) {
+             background-image: url("../img/flowers.jpg");
+         }
+    @media screen and (max-width: 1500px) {
+             background-image: url("../img/lgs.jpg");
+         }
+     @media screen and (max-width: 1200px) {
+              background-image: url("../img/lgs.jpg"); //grey
+          }
+      @media screen and (max-width: 950px) {
+               background-image: none;
+           }
+
+}
+
+.outer-wrap-main {
+    background: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    color: @textColor;
+    box-shadow: none;
+    border: none;
+}
+
+
+.region-main {
+    #desinax-vgrid.column(@columns - 2);
+    #desinax-vgrid.push(1);
+    min-height: 400px;
+    margin-bottom: @magicNumber;
+    margin-top: @magicNumber;
+    background-image: url(../img/girl2.png);
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: right;
+    @media screen and (max-width: 950px) {
+        #desinax-vgrid.column(@columns - 6);
+        #desinax-vgrid.push(1);
+        min-height: 400px;
+    }
+    @media screen and (max-width: 800px) {
+        #desinax-vgrid.column(@columns - 2);
+        #desinax-vgrid.push(1);
+        min-height: 300px;
+    }
+    @media screen and (max-width: 550px) {
+        margin-top: 24px;
+    }
+    article {
+        width: 60%;
+        float: left;
+        padding-left: 1%;
+    }
+
+    &.has-sidebar {
+        #desinax-vgrid.column(@columns - 12);
+        #desinax-vgrid.push(1);
+        background: rgba(243, 243, 243, 0);
+        margin-top: 0;
+        article p {
+            display: block;
+            color: @navbarTextColor;
+        }
+    }
+
+    &.has-sidebar-right {
+        #desinax-vgrid.column(@columns - 8);
+        #desinax-vgrid.push(1);
+        margin-bottom: 60px;
+        margin-top: @magicNumber;
+        img {
+            max-height: 100%;
+        }
+        figure {
+            border-color: #7a7a7a;
+        }
+        @media screen and (max-width: 950px) {
+            #desinax-vgrid.column(@columns - 6);
+            #desinax-vgrid.push(1);
+        }
+    }
+
+    &.has-sidebar-left {
+        #desinax-vgrid.column(16);
+        #desinax-vgrid.push(1);
+        @media screen and (max-width: 950px) {
+            #desinax-vgrid.column(@columns - 4);
+            #desinax-vgrid.push(1);
+        }
+    }
+
+    &.has-sidebar-left.has-sidebar-right {
+        #desinax-vgrid.column(13);
+        #desinax-vgrid.push(1);
+    }
+}
+
+.region-main.has-sidebar-left {
+    @media screen and (max-width: 950px) {
+        #desinax-vgrid.column(@columns - 4);
+        #desinax-vgrid.push(1);
+    }
+}
+
+.route-lek .region-main {
+    background-image: none;
+    article {
+        width: 90%;
+        padding-left: 1%;
+    }
+}
+
+.route-dev .region-main {
+    background-image: none;
+    article {
+        width: 90%;
+        padding-left: 1%;
+    }
+}
+
+.route-om article {
+    width: 90%;
+    padding-left: 1%;
+}
+
+.route-om figure {
+    margin-left: 5%;
+}
+
+/* ----------------------------------------------------------------------------- SIDEBAR ----------------------- */
+
+.region-sidebar-left,
+.region-sidebar-right {
+    #desinax-vgrid.column(6);
+}
+
+.region-sidebar-left.has-sidebar-right {
+    #desinax-vgrid.column(@columns);
+    #desinax-vgrid.push(1);
+    border-style: none;
+}
+
+
+.region-sidebar-right {
+    #desinax-vgrid.column(5);
+    #desinax-vgrid.push(1);
+    border-radius: 7%;
+    border-top-style: double;
+    border-bottom-style: double;
+    box-sizing: border-box;
+    margin-top: @magicNumber * 4;
+    text-align: center;
+    color: @textColor;
+    a {
+        color: @textColor;
+        letter-spacing: .5px;
+        transition: all .1s ease-in;
+    }
+    a:hover{
+        color: @hoverTextColor;
+        letter-spacing: 0.1em;
+    }
+
+    @media screen and (max-width: 950px) {
+        #desinax-vgrid.column(@columns);
+        #desinax-vgrid.push(0);
+        border-style: none;
+    }
+}
+
+.region-sidebar-left {
+    #desinax-vgrid.column(5);
+    #desinax-vgrid.push(1);
+    a {
+       letter-spacing: .5px;
+       transition: all .1s ease-in;
+   }
+    a:hover {
+        letter-spacing: 0.1em;
+   }
+}
+
+.region-sidebar-right.has-sidebar-left,
+.region-sidebar-left.has-sidebar-right {
+    #desinax-vgrid.column(4);
+    }
+
+.region-sidebar-left.has-sidebar-right {
+    #desinax-vgrid.column(3);
+    #desinax-vgrid.push(1);
+    }
+
+.region-sidebar-right.has-sidebar-left {
+    #desinax-vgrid.column(@columns);
+    #desinax-vgrid.push(0);
+    border-style: none;
+    color: @textColor;
+    a {
+        color: @textColor;
+    }
+    a:hover{
+        color: @hoverTextColor;
+    }
+}
+
+
+.selected {
+    text-decoration: underline;
+}
+
+/* ----------------------------------------------------------------------------- NEXT PREV -------------------------- */
+
+.next {
+    display: inline;
+    float: right;
+    clear: both;
+}
+
+.previous {
+    display: inline;
+    float: left;
+    clear: left;
+}
+
+.next-previous {
+    opacity: .9;
+}
+
+
+.hljs {
+    overflow: scroll;
+    overflow-y: hidden;
+}
+
+.hljs-comment  {
+    display: block;
+}
+
+select {
+    width: 80%;
+}
+
+code {
+    color: @textColor;
+}
