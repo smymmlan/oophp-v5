@@ -5357,10 +5357,14 @@ figure.figure.right {
 .region-main.has-sidebar-left {
   display: inline;
   float: left;
-  width: 65.625%;
-  margin-left: 0.52083333%;
+  width: 69.79166667%;
   margin-right: 0.52083333%;
-  margin-left: 4.6875%;
+  margin-left: 0.52083333%;
+}
+.region-main.has-sidebar-left article {
+  width: 100%;
+  float: none;
+  padding-left: 0;
 }
 @media screen and (max-width: 950px) {
   .region-main.has-sidebar-left {
@@ -5384,7 +5388,7 @@ figure.figure.right {
   .region-main.has-sidebar-left {
     display: inline;
     float: left;
-    width: 82.29166667%;
+    width: 90.625%;
     margin-left: 0.52083333%;
     margin-right: 0.52083333%;
     margin-left: 4.6875%;
@@ -5394,7 +5398,7 @@ figure.figure.right {
   background-image: none;
 }
 .route-lek .region-main article {
-  width: 90%;
+  width: 100%;
   padding-left: 1%;
 }
 .route-dev .region-main {
@@ -5517,14 +5521,16 @@ figure.figure.right {
   display: inline;
   float: right;
   clear: both;
+  font-size: 0.8em;
 }
 .previous {
   display: inline;
   float: left;
   clear: left;
+  font-size: 0.8em;
 }
 .next-previous {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 .hljs {
   overflow: scroll;
