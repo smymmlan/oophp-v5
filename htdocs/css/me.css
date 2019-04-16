@@ -5415,6 +5415,12 @@ figure.figure.right {
 .route-om figure {
   margin-left: 5%;
 }
+.route-guess-play form {
+  width: 40%;
+}
+.route-guess-play form fieldset {
+  border-radius: 5px;
+}
 /* ----------------------------------------------------------------------------- SIDEBAR ----------------------- */
 .region-sidebar-left,
 .region-sidebar-right {
