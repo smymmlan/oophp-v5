@@ -11,14 +11,14 @@ namespace Anax\View;
 
 ?><!doctype html>
 <meta charset="utf-8">
-<h2>Spela tärningspelet -först till 100 vinner.</h2>
+<h2><?= $currentPlayer ?> vann! </h2>
 
 <form method="post" class="diceGameForm">
     <fieldset><br/>
         <div class="diceBox">
         <div class="playerDice">
-        <input type = "submit" name = "roll" value="Kasta tärningarna" formaction="roll"></input><br/>
-        <input type = "submit" name = "save" value="Spara poängen" formaction="save"></input><br/>
+        <input type = "submit" name = "roll" value="Kasta tärningarna" disabled formaction="roll"></input><br/>
+        <input type = "submit" name = "save" value="Spara poängen" disabled formaction="save"></input><br/>
     </div>
         <div class="computerDice">
                 <?php if (isset($dicePics)) { ?>

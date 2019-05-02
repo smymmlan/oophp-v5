@@ -5,80 +5,98 @@ namespace Tuss\Dice100;
 /**
  * DiceTurn
  */
-class DiceTurn extends DiceHand
+class DiceTurn
 {
     /**
      * constructor to initiate the turn
      *
-     * @param int $points
+     * set/empty values/array to 0
+     *
+     * @param int $points             the points from the current turn
+     * @param array $allHandsInTurn   collects all thrown hands
      */
 
     protected $points;
-    protected $quantity;
-    protected $status;
-    protected $diceHand;
-    // protected $turn;
+    protected $allHandsInTurn;
 
-    public function __construct(int $quantity)
+
+    public function __construct()
     {
-        $this->quantity = $quantity;
         $this->points = 0;
-        $this->status = "";
+        $this->allHandsInTurn = [];
     }
 
-    public function setPoints()
-    {
-        if ($this->status === "green") {
-            $this->points += $this->diceHand->sum();
-        }
-    }
-
-    public function throw()
-    {
-        $this->diceHand  = new DiceHand($this->quantity);
-        $this->diceHand->roll();
-    }
-
+    /**
+     * returns the points
+     *
+     * @param int $points             the points from the current turn
+     * @return int
+     */
     public function getPoints()
     {
         return $this->points;
     }
 
+    /**
+     * resets the points to 0
+     *
+     * @param int $points             the points from the current turn
+     * @return void
+     */
+    public function resetPoints()
+    {
+        $this->points = 0;
+    }
+
+    /**
+     * returns all thrown hands collected in an array
+     *
+     * @param array $allHandsInTurn   collects all thrown hands
+     * @return array
+     */
+    public function getTurnHands()
+    {
+        return $this->allHandsInTurn;
+    }
+
+    /**
+     * returns the dice graphic as string to use in view
+     *
+     * @return string
+     */
     public function getGraphic()
     {
         return $this->diceHand->graphic();
     }
 
-    public function lookForOne()
+    /**
+     * pushes in the last hands graphics in array to collect all hands
+     *
+     * @return void
+     */
+    public function addHand($hand)
     {
-        $eyes = [];
-        $eyes = $this->diceHand->values();
-        $j = count($eyes);
-        $red = "";
-
-        for ($i=0; $i<$j; $i++) {
-            if ($eyes[$i] == 1) {
-                $red = "red";
-                break;
-            }
-        }
-
-        if ($red === "red") {
-            return "red";
-        } else {
-            return "green";
-        }
+        array_push($this->allHandsInTurn, $hand);
     }
 
-    public function setStatus()
+    /**
+     * adds the sum of last thrown hand to existing points.
+     *
+     * @return void
+     */
+    public function addPoints($hand)
     {
-        $this->status = $this->lookForOne();
-        $this->setPoints();
+        $this->points = $this->points + $hand;
     }
 
-    public function returnStatus()
+    /**
+     * returns all hands graphic
+     *
+     * @param array $allHandsInTurn   collects graphic of all thrown hands
+     * @return array of strings
+     */
+    public function returnAllHandsInTurn()
     {
-        return $this->status;
+        return $this->allHandsInTurn;
     }
-
 }

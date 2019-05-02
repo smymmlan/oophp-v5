@@ -1,13 +1,13 @@
 <?php
 
-namespace Anax;
+namespace Tuss\Dice100;
 
 use PHPUnit\Framework\TestCase;
 
 /**
  * Example test class.
  */
-class ExampleTest extends TestCase
+class Dice100Test extends TestCase
 {
     /**
      * Just assert something is true.
