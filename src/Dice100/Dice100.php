@@ -27,7 +27,7 @@ class Dice100
     protected $hand;
     protected $turn;
 
-    public function __construct(int $quantity)
+    public function __construct(int $quantity = 3)
     {
         $this->quantity = $quantity;
         $this->playerPoints = 0;

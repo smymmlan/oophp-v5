@@ -11,6 +11,10 @@ $app->router->post("dice100/init", function () use ($app) {
     //session_destroy();
     $quantity = $_POST["quantity"] ?? null;
 
+    if (empty($quantity)) {
+        $quantity = 3;
+    }
+
     $_SESSION["game"] = new Tuss\Dice100\Dice100($quantity);
 
     return $app->response->redirect("dice100/nextturn", $data);

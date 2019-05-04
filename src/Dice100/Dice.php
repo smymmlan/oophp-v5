@@ -8,8 +8,8 @@ namespace Tuss\Dice100;
 class Dice
 {
     /**
-    * @var int    $sides    the faces of the die
-    * @var int    $result   the result of the roll
+    * @param int    $sides    the faces of the die
+    * @param int    $result   the result of the roll
     * @var array  $lastRoll the results of last roll
     *
     */
@@ -20,9 +20,6 @@ class Dice
     /**
      * Constructor to create a dice.
      *
-     *
-     * @param int   int $times the number of throws
-     * @return string
      */
     public function __construct(int $sides = 6)
     {
@@ -42,5 +39,10 @@ class Dice
     public function getLastRoll()
     {
         return $this->lastRoll;
+    }
+
+    public function getSides()
+    {
+        return $this->sides;
     }
 }

@@ -10,8 +10,8 @@ class DiceHand extends Dice
      * @var Dice $dices   Array consisting of dices.
      * @var int  $values  Array consisting of last roll of the dices.
      */
-    private $dices;
-    private $values;
+    protected $dices;
+    protected $values;
     protected $thereIsOne;
 
     /**
