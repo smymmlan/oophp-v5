@@ -9,7 +9,9 @@ namespace Anax\View;
 // Show incoming variables and view helper functions
 //echo showEnvironment(get_defined_vars(), get_defined_functions());
 
-
+if (!isset($siteLogoTextIconAlt)) {
+        $siteLogoTextIconAlt = "leaf";
+}
 
 ?><span class="site-logo-text" >
     <a href="<?= url($homeLink) ?>">

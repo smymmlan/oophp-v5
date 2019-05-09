@@ -69,7 +69,7 @@ class Histogram
             }
         }
         return $str;
-        }
+    }
 
 
     /**

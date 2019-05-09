@@ -167,4 +167,49 @@ class Dice100Test extends TestCase
         $str = $game->returnPlayerGraphic();
         $this->assertRegexp('/dice-/', $str[0]);
     }
+
+    /**
+     * test if the return value is of type string
+     *
+     */
+    public function testIfCreateHistogramReturnString()
+    {
+        $game = new Dice100();
+        $this->assertInstanceOf("\Tuss\Dice100\Dice100", $game);
+
+        $game->newTurn();
+        $game->playerPLays();
+        $game->createHistogram();
+        $data = $game->getGameStatistics();
+
+        //Set the internal pointer to the end.
+        end($data);
+
+        //Retrieve the key of the current element.
+        $key = key($data);
+
+        $this->assertIsString($key);
+    }
+
+    /**
+     * test that computer rolls three times when player is more than 10 points
+     * ahead. Also makesure that player has more points than computer after
+     * 50 rolls. Computer rolls once.
+     */
+    public function testComputerPlaysUsingLoop()
+    {
+        $game = new Dice100();
+        $this->assertInstanceOf("\Tuss\Dice100\Dice100", $game);
+
+        $game->newTurn();
+        for ($i=0; $i<50; $i++) {
+            $game->playerPlays();
+            $game->savePlayerScore();
+        }
+        $game->computerPlays();
+        $pp = $game->returnPlayerPoints();
+        $cp = $game->returnComputerPoints();
+
+        $this->assertGreaterThan($cp, $pp);
+    }
 }

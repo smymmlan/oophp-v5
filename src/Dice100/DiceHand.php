@@ -113,7 +113,7 @@ class DiceHand extends Dice implements HistogramInterface
      */
     public function getHandSerie()
     {
-        for($i = 0;$i < count($this->values);$i++){
+        for ($i = 0; $i < count($this->values); $i++) {
             $this->serie[$i] = $this->values[$i];
         }
 

@@ -81,7 +81,7 @@ class Dice100Controller implements AppInjectableInterface
         $game = new Dice100($quantity);
         $session->set("game", $game);
 
-        return $response->redirect("dice100game/nextturn", $data);
+        return $response->redirect("dice100game/nextturn");
     }
 
     /**
@@ -141,20 +141,19 @@ class Dice100Controller implements AppInjectableInterface
         $page = $this->app->page;
 
         $title = "Tärningsspelet";
+
         $graphic  = $session->get("game")->computerPlays();
         $session->get("game")->createHistogram();
-        $data  = $session->get("game")->getGameStatistics();
-
         if ($session->get("game")->returnComputerPoints() >= 100) {
             return $response->redirect("dice100game/winner");
-        } else {
-            $page->add("dice100game/result", $data);
+        }
+        $data  = $session->get("game")->getGameStatistics();
+        $page->add("dice100game/result", $data);
             // $app->page->add("dice100/debug", $data);
 
-            return $page->render([
-                "title" => $title,
-            ]);
-        }
+        return $page->render([
+            "title" => $title,
+        ]);
     }
 
     /**
