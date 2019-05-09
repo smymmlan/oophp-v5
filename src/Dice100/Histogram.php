@@ -71,7 +71,6 @@ class Histogram
         return $str;
     }
 
-
     /**
      * Inject the object to use as base for the histogram data.
      *

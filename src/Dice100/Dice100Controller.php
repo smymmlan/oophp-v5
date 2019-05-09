@@ -142,7 +142,7 @@ class Dice100Controller implements AppInjectableInterface
 
         $title = "Tärningsspelet";
 
-        $graphic  = $session->get("game")->computerPlays();
+        $session->get("game")->computerPlays();
         $session->get("game")->createHistogram();
         if ($session->get("game")->returnComputerPoints() >= 100) {
             return $response->redirect("dice100game/winner");

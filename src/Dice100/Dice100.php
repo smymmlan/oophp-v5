@@ -180,16 +180,6 @@ class Dice100 implements HistogramInterface
     }
 
     /**
-     * return player dice graphics
-     *
-     * @return string
-     */
-    public function returnPlayerGraphic()
-    {
-        return $this->hand->graphic();
-    }
-
-    /**
      * saves the players points from current turn
      *
      * @return void

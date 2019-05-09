@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 class Dice100Test extends TestCase
 {
     /**
-     * Just assert something is true.
+     * Test the return value of comp-points and player-points
      */
     public function testCreateObjectDice100NoArgReturnPlayerPoints()
     {
@@ -20,25 +20,16 @@ class Dice100Test extends TestCase
         $res = $game->returnPlayerPoints();
         $exp = 0;
         $this->assertEquals($exp, $res);
-    }
-
-    /**
-     * Test create object and check if computer points returns 0
-     */
-    public function testCreateObjectDice100NoArgReturnComputerPoints()
-    {
-        $game = new Dice100();
-        $this->assertInstanceOf("\Tuss\Dice100\Dice100", $game);
-
         $res = $game->returnComputerPoints();
         $exp = 0;
         $this->assertEquals($exp, $res);
     }
 
     /**
+     * control the changingPLayer method. Control if it changes value
      * control the current player randomization -is 0 or 1
      */
-    public function testCurrentPlayerValue()
+    public function testChangingPlayerMethod()
     {
         $game = new Dice100();
         $this->assertInstanceOf("\Tuss\Dice100\Dice100", $game);
@@ -46,15 +37,6 @@ class Dice100Test extends TestCase
         $res = $game->currentlyPlaying();
         $exp = [0,1];
         $this->assertContains($res, $exp);
-    }
-
-    /**
-     * control the changingPLayer method. Control if it changes value
-     */
-    public function testChangingPlayerMethod()
-    {
-        $game = new Dice100();
-        $this->assertInstanceOf("\Tuss\Dice100\Dice100", $game);
 
         $oldPlayer = $game->currentlyPlaying();
         $game->changePlayer();
@@ -68,7 +50,7 @@ class Dice100Test extends TestCase
 
     /**
      * control that the playername changes depending on whos turn it is,
-     * -who is current player
+     * -who is current player and is the return value type string
      */
     public function testPlayerNameMethod()
     {
@@ -79,19 +61,7 @@ class Dice100Test extends TestCase
         $game->changePlayer();
         $newPlayerName = $game->playerName();
         $this->assertNotEquals($oldPlayerName, $newPlayerName);
-    }
-
-    /**
-     * test if the return value is of type string
-     *
-     */
-    public function testPlayerNameMethodReturnsString()
-    {
-        $game = new Dice100();
-        $this->assertInstanceOf("\Tuss\Dice100\Dice100", $game);
-
-        $str = $game->playerName();
-        $this->assertIsString($str);
+        $this->assertIsString($newPlayerName);
     }
 
     /**
@@ -142,36 +112,6 @@ class Dice100Test extends TestCase
      * test if the return value is of type string
      *
      */
-    public function testIfGraphicStringReturnsWhenPlayerPlays()
-    {
-        $game = new Dice100();
-        $this->assertInstanceOf("\Tuss\Dice100\Dice100", $game);
-
-        $game->newTurn();
-        $game->playerPLays();
-        $str = $game->returnPlayerGraphic();
-        $this->assertIsString($str[0]);
-    }
-
-    /**
-     * test if the return value is of type string and contains "dice-"
-     *
-     */
-    public function testIfGraphicStringContainKeyWord()
-    {
-        $game = new Dice100();
-        $this->assertInstanceOf("\Tuss\Dice100\Dice100", $game);
-
-        $game->newTurn();
-        $game->playerPLays();
-        $str = $game->returnPlayerGraphic();
-        $this->assertRegexp('/dice-/', $str[0]);
-    }
-
-    /**
-     * test if the return value is of type string
-     *
-     */
     public function testIfCreateHistogramReturnString()
     {
         $game = new Dice100();
@@ -207,9 +147,9 @@ class Dice100Test extends TestCase
             $game->savePlayerScore();
         }
         $game->computerPlays();
-        $pp = $game->returnPlayerPoints();
-        $cp = $game->returnComputerPoints();
+        $pPoints = $game->returnPlayerPoints();
+        $cPoints = $game->returnComputerPoints();
 
-        $this->assertGreaterThan($cp, $pp);
+        $this->assertGreaterThan($cPoints, $pPoints);
     }
 }
