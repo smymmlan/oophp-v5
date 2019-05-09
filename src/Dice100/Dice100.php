@@ -5,8 +5,9 @@ namespace Tuss\Dice100;
 /**
  * Dice100 A game of dice-throwing
  */
-class Dice100
+class Dice100 implements HistogramInterface
 {
+    use HistogramTrait2;
     /**
      * constructor to initiate
      * set values to starting amount and choose who starts,
@@ -26,6 +27,7 @@ class Dice100
     protected $currentPlayer;
     protected $hand;
     protected $turn;
+    protected $histogram;
 
     public function __construct(int $quantity = 3)
     {
@@ -33,6 +35,8 @@ class Dice100
         $this->playerPoints = 0;
         $this->computerPoints = 0;
         $this->currentPlayer = rand(0, 1);
+        $this->serie = [];
+        $this->histogram = new Histogram();
     }
 
     /**
@@ -93,6 +97,24 @@ class Dice100
     }
 
     /**
+     * adding upp the values from each dice hand in $this->serie to get all
+     * throws that is made during the entire game to be able to constantly
+     * update the histogram. Use current class as object to pass into
+     * Histogram method
+     *
+     * @return void
+     */
+    public function createHistogram()
+    {
+        for ($i=0; $i<count($this->hand->getHandSerie()); $i++) {
+            array_push($this->serie, $this->hand->getHandSerie()[$i]);
+        }
+
+        $this->histogram->injectData($this);
+        $this->str = $this->histogram->getAsText();
+    }
+
+    /**
      * create new hand when COMPUTER plays
      * add graphic for the throw
      * get total points from current hand and save in DiceTurn
@@ -107,8 +129,17 @@ class Dice100
     public function computerPlays()
     {
         $graphic = [];
+        $throws;
 
-        for ($i=0; $i<2; $i++) {
+        if ($this->computerPoints < ($this->playerPoints - 10)) {
+            $throws = 3;
+        } else if ($this->computerPoints > ($this->playerPoints + 10)) {
+            $throws = 1;
+        } else {
+            $throws = 2;
+        }
+
+        for ($i=0; $i<$throws; $i++) {
             $this->hand = new DiceHand($this->quantity);
             $this->turn->addHand($this->hand->graphic());
             $this->turn->addPoints($this->hand->sum());
@@ -194,7 +225,8 @@ class Dice100
             "turnPoints" => $this->turn->getPoints(),
             "computerPoints" => $this->computerPoints,
             "dicePics" => $this->turn->getTurnHands(),
-            "playerPoints" => $this->playerPoints
+            "playerPoints" => $this->playerPoints,
+            "histoGram" => $this->str
         ];
         return $data;
     }

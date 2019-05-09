@@ -4,8 +4,11 @@ namespace Tuss\Dice100;
 /**
  * a dicehand, consisting of dices.
  */
-class DiceHand extends Dice
+class DiceHand extends Dice implements HistogramInterface
 {
+
+    use HistogramTrait2;
+
     /**
      * @var Dice $dices   Array consisting of dices.
      * @var int  $values  Array consisting of last roll of the dices.
@@ -100,5 +103,20 @@ class DiceHand extends Dice
     {
         $result = ($this->sum()) / (count($this->values));
         return number_format($result, 1);
+    }
+
+    /**
+     * use current values and save in array serie to be used
+     * in histogram
+     *
+     * @return array of integers
+     */
+    public function getHandSerie()
+    {
+        for($i = 0;$i < count($this->values);$i++){
+            $this->serie[$i] = $this->values[$i];
+        }
+
+        return $this->serie;
     }
 }
