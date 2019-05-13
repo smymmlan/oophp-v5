@@ -13,5 +13,10 @@ return [
             "mount" => "app",
             "handler" => "\Anax\Controller\Dice100Controller",
         ],
+        [
+            "info" => "Sample controller app style.",
+            "mount" => "app",
+            "handler" => "\Anax\Controller\SampleController",
+        ],
     ]
 ];

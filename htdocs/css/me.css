@@ -5421,6 +5421,9 @@ figure.figure.right {
 .route-guess-play form fieldset {
   border-radius: 5px;
 }
+[class^="route-movie"] .region-main {
+  background-image: none;
+}
 /* ----------------------------------------------------------------------------- SIDEBAR ----------------------- */
 .region-sidebar-left,
 .region-sidebar-right {
@@ -5634,6 +5637,38 @@ code {
 }
 .pNoMrg {
   margin: 0;
+}
+.thumb {
+  max-width: 100px;
+  max-height: 100px;
+}
+.movie-navbar {
+  float: left;
+  width: 20%;
+}
+.movie-table {
+  float: left;
+  width: 80%;
+  margin-top: 2%;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+.movie-table th {
+  text-align: left;
+  background-color: snow;
+}
+.movie-table tr {
+  padding: 2px;
+}
+.movie-table tr:hover {
+  background-color: snow;
+}
+.update-icon {
+  font-size: 1.5em;
+  text-align: center;
+}
+.delete-icon {
+  text-align: center;
 }
 .inner-wrap-header {
   background-color: #f5f5f5;

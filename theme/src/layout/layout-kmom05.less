@@ -148,6 +148,9 @@
     }
 }
 
+
+// ----------------------------------- ROUTES ROUTES ROUTES ------------------
+
 .route-lek .region-main {
     background-image: none;
     article {
@@ -179,6 +182,11 @@
         border-radius: 5px;
     }
 }
+
+[class^="route-movie"] .region-main {
+    background-image: none;
+}
+
 
 /* ----------------------------------------------------------------------------- SIDEBAR ----------------------- */
 
@@ -383,4 +391,43 @@ code {
 
 .pNoMrg {
     margin: 0;
+}
+
+// ------------------------------------ DATABAS FILM STYLE -----------------
+
+.thumb {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.movie-navbar {
+    float: left;
+    width: 20%;
+}
+
+.movie-table {
+    float: left;
+    width: 80%;
+    margin-top: 2%;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    th {
+        text-align: left;
+        background-color: snow;
+    }
+    tr {
+        padding: 2px;
+    }
+    tr:hover {
+        background-color: snow;
+    }
+}
+
+.update-icon {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.delete-icon {
+    text-align: center;
 }

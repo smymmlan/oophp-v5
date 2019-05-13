@@ -1,0 +1,5 @@
+{
+    "require": {
+        "anax/database": "^2.2"
+    }
+}
