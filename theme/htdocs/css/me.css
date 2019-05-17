@@ -5424,6 +5424,12 @@ figure.figure.right {
 [class^="route-movie"] .region-main {
   background-image: none;
 }
+[class^="route-textfilter"] .region-main {
+  background-image: none;
+}
+[class^="route-textfilter"] .region-main a {
+  color: #c63952;
+}
 /* ----------------------------------------------------------------------------- SIDEBAR ----------------------- */
 .region-sidebar-left,
 .region-sidebar-right {

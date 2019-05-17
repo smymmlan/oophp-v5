@@ -89,5 +89,10 @@ return [
             "url" => "movie",
             "title" => "Filmdatabas",
         ],
+        [
+            "text" => "Textfilter",
+            "url" => "textfilter",
+            "title" => "Visa upp olika filter",
+        ],
     ],
 ];
