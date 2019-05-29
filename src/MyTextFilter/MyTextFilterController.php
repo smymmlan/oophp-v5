@@ -55,7 +55,7 @@ class MyTextFilterController implements AppInjectableInterface
 
         $text = file_get_contents("../text/text.txt");
         $filter = array("bbcode");
-        $_SESSION["filter"] = $filter;
+
         $myTextFilter = new MyTextFilter();
         $res = $myTextFilter->parse($text, $filter);
 
@@ -82,7 +82,7 @@ class MyTextFilterController implements AppInjectableInterface
 
         $text = file_get_contents("../text/text.txt");
         $filter = array("link");
-        $_SESSION["filter"] = $filter;
+
         $myTextFilter = new MyTextFilter();
         $res = $myTextFilter->parse($text, $filter);
 
@@ -109,9 +109,10 @@ class MyTextFilterController implements AppInjectableInterface
 
         $text = file_get_contents("../text/text.txt");
         $filter = array("markdown");
+
         $myTextFilter = new MyTextFilter();
         $res = $myTextFilter->parse($text, $filter);
-        $_SESSION["filter"] = $filter;
+
         $page->add("textfilter/navbar-index");
         $page->add("textfilter/markdown", [
               "res" => $res,
@@ -135,6 +136,7 @@ class MyTextFilterController implements AppInjectableInterface
 
         $text = file_get_contents("../text/text.txt");
         $filter = array("nl2br");
+
         $myTextFilter = new MyTextFilter();
         $res = $myTextFilter->parse($text, $filter);
 
@@ -161,6 +163,7 @@ class MyTextFilterController implements AppInjectableInterface
 
         $text = file_get_contents("../text/text.txt");
         $filter = array("bbcode", "link", "markdown", "nl2br");
+        
         $myTextFilter = new MyTextFilter();
         $res = $myTextFilter->parse($text, $filter);
 

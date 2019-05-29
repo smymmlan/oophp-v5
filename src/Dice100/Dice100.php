@@ -2,7 +2,12 @@
 
 namespace Tuss\Dice100;
 
+// use Anax\Route\Exception\ForbiddenException;
+// use Anax\Route\Exception\NotFoundException;
+// use Anax\Route\Exception\InternalErrorException;
+
 /**
+ * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  * Dice100 A game of dice-throwing
  */
 class Dice100 implements HistogramInterface

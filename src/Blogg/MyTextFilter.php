@@ -1,6 +1,6 @@
 <?php
 
-namespace Anax\MyTextFilter;
+namespace Anax\Blogg;
 
 use \Michelf\Markdown;
 
@@ -11,13 +11,7 @@ use \Michelf\Markdown;
  */
 class MyTextFilter
 {
-
-    /**
-    * @var array $filters Supported filters with method names of
-    *                     their respective handler.
-    *
-    */
-
+    
     /**
      * Call each filter on the text and return the processed text.
      *
@@ -119,7 +113,6 @@ class MyTextFilter
      */
     public function nl2br($text)
     {
-        $_SESSION["where"] = "brytarad funk";
         $text = str_replace(array("\r\n", "\r", "\n"), "<br />", $text);
         return $text;
     }

@@ -32,6 +32,13 @@ return [
     // These views are always loaded into the collection of views.
     "views" => [
         [
+            "region" => "flash",
+            "template" => "anax/v2/image/default",
+            "data" => [
+                "src" => "image/theme/flash.png?width=550&height=100&area=0,0,0,0",
+            ],
+        ],
+        [
             "region" => "header-col-1",
             "template" => "anax/v2/header/site_logo",
             "data" => [

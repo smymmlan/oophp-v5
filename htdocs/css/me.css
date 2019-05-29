@@ -5430,6 +5430,12 @@ figure.figure.right {
 [class^="route-textfilter"] .region-main a {
   color: #c63952;
 }
+[class^="route-blogg"] .region-main {
+  background-image: none;
+}
+[class^="route-blogg"] .region-main a:hover {
+  color: #c63952;
+}
 /* ----------------------------------------------------------------------------- SIDEBAR ----------------------- */
 .region-sidebar-left,
 .region-sidebar-right {
@@ -5676,6 +5682,80 @@ code {
 .delete-icon {
   text-align: center;
 }
+.blogg-navbar {
+  float: left;
+  width: 13%;
+  font-family: 'Tangerine', sans-serif;
+  font-size: 1.4em;
+}
+.blogg-table {
+  float: left;
+  width: 80%;
+  margin-top: 2%;
+  font-size: 11px;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+.blogg-table th {
+  text-align: left;
+  border-bottom: 1px solid #f2c5cd;
+}
+.blogg-table .delete-txt {
+  text-align: center;
+}
+.blogg-table .update-icon {
+  font-size: 1.8em;
+  text-align: center;
+}
+.blogg-table .delete-icon {
+  font-size: 1.4em;
+  text-align: center;
+}
+.blogg-table tr {
+  padding: 2px;
+}
+.blogg-table tr:hover {
+  background-color: snow;
+}
+.blogg-table td {
+  padding: 3px;
+}
+.blogg-table-pages {
+  float: left;
+  width: 80%;
+  margin-top: 2%;
+  font-size: 13px;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+.blogg-table-pages th {
+  text-align: left;
+  border-bottom: 1px solid #f2c5cd;
+}
+.blogg-table-pages .delete-txt {
+  text-align: center;
+}
+.blogg-table-pages .update-icon {
+  font-size: 1.8em;
+  text-align: center;
+}
+.blogg-table-pages .delete-icon {
+  font-size: 1.4em;
+  text-align: center;
+}
+.blogg-table-pages tr {
+  padding: 2px;
+}
+.blogg-table-pages tr:hover {
+  background-color: snow;
+}
+.blogg-table-pages td {
+  padding: 3px;
+}
+textarea {
+  width: 80%;
+  min-height: 100px;
+}
 .inner-wrap-header {
   background-color: #f5f5f5;
 }
@@ -5706,7 +5786,7 @@ code {
 }
 .region-header-col-2 .my-navbar {
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.5em;
   margin-top: 3px;
   padding-right: 1%;
   box-sizing: border-box;

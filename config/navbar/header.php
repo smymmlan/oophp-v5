@@ -93,5 +93,10 @@ return [
             "url" => "textfilter",
             "title" => "Visa upp olika filter",
         ],
+        [
+            "text" => "Blogg",
+            "url" => "blogg",
+            "title" => "Visa upp webbsidor",
+        ],
     ],
 ];

@@ -194,6 +194,13 @@
     }
 }
 
+[class^="route-blogg"] .region-main {
+    background-image: none;
+    a:hover {
+        color: @hoverTextColor;
+    }
+}
+
 /* ----------------------------------------------------------------------------- SIDEBAR ----------------------- */
 
 .region-sidebar-left,
@@ -436,4 +443,84 @@ code {
 
 .delete-icon {
     text-align: center;
+}
+
+// ------------------------------------ DATABAS BLOGG STYLE -----------------
+
+.blogg-navbar {
+    float: left;
+    width: 13%;
+    font-family: @fontNavbar;
+    font-size: 1.4em;
+}
+
+.blogg-table {
+    float: left;
+    width: 80%;
+    margin-top: 2%;
+    font-size: 11px;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    th {
+        text-align: left;
+        border-bottom: 1px solid #f2c5cd;
+    }
+    .delete-txt {
+        text-align: center;
+    }
+    .update-icon {
+        font-size: 1.8em;
+        text-align: center;
+    }
+    .delete-icon {
+        font-size: 1.4em;
+        text-align: center;
+    }
+    tr {
+        padding: 2px;
+    }
+    tr:hover {
+        background-color: snow;
+    }
+    td {
+        padding: 3px;
+    }
+}
+
+.blogg-table-pages {
+    float: left;
+    width: 80%;
+    margin-top: 2%;
+    font-size: 13px;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    th {
+        text-align: left;
+        border-bottom: 1px solid #f2c5cd;
+    }
+    .delete-txt {
+        text-align: center;
+    }
+    .update-icon {
+        font-size: 1.8em;
+        text-align: center;
+    }
+    .delete-icon {
+        font-size: 1.4em;
+        text-align: center;
+    }
+    tr {
+        padding: 2px;
+    }
+    tr:hover {
+        background-color: snow;
+    }
+    td {
+        padding: 3px;
+    }
+}
+
+textarea {
+    width: 80%;
+    min-height: 100px;
 }
